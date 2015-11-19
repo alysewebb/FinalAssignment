@@ -56,6 +56,64 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.Game {
+    height: 1010px;
+    width: 1298px;
+    background-image: url("../img/PegsBG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.Cog {
+    position: absolute;
+    bottom: 0;
+}
+
+.handle {
+    position: absolute;
+    top: 450px;
+    left: 50px;
+}
+
+.Pulley1 {
+    position: absolute;
+    top: 155px;
+    right: 282px;
+}
+
+.Rope1 {
+    position: absolute;
+    top: 32px;
+    right: 136px;
+}
+
+.cornchip {
+    width: 92px;
+    height: 84px;
+    background-image: url("../img/CornChip.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 115px;
+    top: 100px;
+}
+
+.salsabowl {
+    position: absolute;
+    bottom: 0;
+    right: 90px;
+}
+
+.puppy {
+    position: absolute;
+    right: -700px;
+    top: 600px;
+
+}
 
 
 /* ==========================================================================
