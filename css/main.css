@@ -91,6 +91,15 @@ textarea {
     right: 136px;
 }
 
+.Rope2 {
+    position: absolute;
+    width:1px;
+    border-right: 3px solid black;
+    height: 40px;
+    top: 63px;
+    right: 140px;
+}
+
 .cornchip {
     width: 92px;
     height: 84px;
@@ -98,14 +107,14 @@ textarea {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    right: 115px;
+    right: 97px;
     top: 100px;
 }
 
 .salsabowl {
     position: absolute;
     bottom: 0;
-    right: 90px;
+    right: 80px;
 }
 
 .puppy {
