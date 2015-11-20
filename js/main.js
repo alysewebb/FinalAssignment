@@ -17,3 +17,5 @@ $(".handle").mouseout(function() {
 $(".handle").mouseup(function() {	
 	clearInterval(animation);
 });
+
+$(".Cog").draggable();
