@@ -6,6 +6,9 @@ var rotate = function(){
 	$(".handle").rotate(angle);
 };
 
+//Make the handle cog turn when you hold 
+//onto it with the mouse
+
 $(".handle").mousedown(function() {	
 	animation = setInterval(rotate,20);
 });
@@ -18,4 +21,6 @@ $(".handle").mouseup(function() {
 	clearInterval(animation);
 });
 
-$(".Cog").draggable();
+// Make the cogs draggable and snap to the pegs.
+
+$(".Cog").draggable({ snap: ".peg", snapMode: "inner", containment: "parent" });

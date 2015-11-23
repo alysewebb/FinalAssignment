@@ -69,8 +69,22 @@ textarea {
 }
 
 .Cog {
-    position: absolute;
+    position: relative;
     bottom: 0;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+}
+
+.Cog img { 
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .handle {
@@ -123,6 +137,71 @@ textarea {
     top: 600px;
 
 }
+
+.peg {
+    background: #8A5D3B;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.peg1 {
+    top: 412px;
+    left: 187px;
+}
+
+.peg2 {
+    top: 260px;
+    left: 215px;
+}
+
+.peg3 {
+    top: 454px;
+    left: 345px;
+}
+
+.peg4 {
+    top: 255px;
+    left: 412px;
+}
+
+.peg5 {
+    top: 510px;
+    left: 463px;
+}
+
+.peg6 {
+    top: 87px;
+    left: 572px;
+}
+
+.peg7 {
+    top: 265px;
+    left: 606px;
+}
+
+.peg8 {
+    top: 374px;
+    left: 608px;
+}
+
+.peg9 {
+    top: 203px;
+    left: 662px;
+}
+
+.peg10 {
+    top: 491px;
+    left: 693px;
+}
+
+.peg11 {
+    top: 311px;
+    left: 817px;
+}
+
+
 
 
 /* ==========================================================================
