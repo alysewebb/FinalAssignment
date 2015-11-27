@@ -22,5 +22,26 @@ $(".handle").mouseup(function() {
 });
 
 // Make the cogs draggable and snap to the pegs.
+$(".peg").droppable(
+{ 
+	accept: ".cog",
+	drop: function(event, ui)
+	{
+		ui.draggable.data('dropped', true);
+	}
+});
 
-$(".Cog").draggable({ snap: ".peg", snapMode: "inner", containment: "parent" });
+$(".cog").draggable({ snap: ".peg", snapMode: "inner", 
+	containment: "parent", revert: false,
+	start: function(event, ui) {
+		ui.helper.data('dropped', false);
+	},
+	stop: function(event, ui) {
+
+		ui.draggable.css({bottom:'originalBottom', left:'originalLeft'})
+	}
+
+});
+
+
+

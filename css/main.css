@@ -56,7 +56,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.Game {
+.game {
     height: 1010px;
     width: 1298px;
     background-image: url("../img/PegsBG.png");
@@ -68,15 +68,47 @@ textarea {
     overflow: hidden;
 }
 
-.Cog {
-    position: relative;
+.cog {
+    position: absolute;
     bottom: 0;
     width: 25px;
     height: 25px;
     background: transparent;
 }
 
-.Cog img { 
+
+.cog1 {
+    bottom: 40px;
+    left: 600px;
+    z-index: 1;
+}
+
+.cog2 {
+    bottom: 48px;
+    left: 700px;
+}
+
+.cog3 {
+    bottom: 60px;
+    left: 800px;
+}
+
+.cog4 {
+    bottom: 80px;
+    left: 500px;
+}
+
+.cog5 {
+    bottom: 110px;
+    left: 400px;
+}
+
+.cog6 {
+    bottom: 125px;
+    left: 200px;
+}
+
+.cog img { 
     position: absolute;
     margin: auto;
     top: 50%;
@@ -93,19 +125,19 @@ textarea {
     left: 50px;
 }
 
-.Pulley1 {
+.pulley1 {
     position: absolute;
     top: 155px;
     right: 282px;
 }
 
-.Rope1 {
+.rope1 {
     position: absolute;
     top: 32px;
     right: 136px;
 }
 
-.Rope2 {
+.rope2 {
     position: absolute;
     width:1px;
     border-right: 3px solid black;
