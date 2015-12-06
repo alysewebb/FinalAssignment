@@ -1,7 +1,12 @@
 var angle = 0;
 var animation;
 
-$(".cog3").data('correctPeg', $(".peg1"));
+$(".cog3").data('correctPeg', $(".peg3"));
+$(".cog6").data('correctPeg', $(".peg4"));
+$(".cog2").data('correctPeg', $(".peg7"));
+$(".cog1").data('correctPeg', $(".peg8"));
+$(".cog4").data('correctPeg', $(".peg10"));
+$(".cog5").data('correctPeg', $(".peg11"));
 
 var rotate = function(){
     angle+=3;
@@ -9,24 +14,34 @@ var rotate = function(){
 
 	// Adapted from:
 	//  http://stackoverflow.com/questions/5177867/how-to-find-out-about-the-snapped-to-element-for-jquery-ui-draggable-elements
-	var cog3 = $(".cog3");
+	var cogs = [$(".cog3"), $(".cog6"), $(".cog2"), $(".cog1"), $(".cog4"), $(".cog5")];
 
-	/* Get all possible elements we can snap to */
-	var snappables = cog3.data('ui-draggable').snapElements;
-    var correctPeg = cog3.data('correctPeg')[0];
+	$.each(cogs, function (index, cog) {
+		/* Get all possible elements we can snap to */
+		var snappables = cog.data('ui-draggable').snapElements;
+	    var correctPeg = cog.data('correctPeg')[0];
 
-    // Look through snap targets for one which is 'snapping' and is also the correctPeg
-  	var snappedToCorrectPeg = false;
-  	$.each(snappables, function (index, element) {
-  		if (element.snapping && correctPeg == element.item) {
-  			snappedToCorrectPeg = true;
-  		}
-  	});
+	    // Look through snap targets for one which is 'snapping' and is also the correctPeg
+	  	var snappedToCorrectPeg = false;
+	  	$.each(snappables, function (i, element) {
+	  		if (element.snapping && correctPeg == element.item) {
+	  			snappedToCorrectPeg = true;
+	  		}
+	  	});
 
-  	//and rotate it
-  	if (snappedToCorrectPeg) {
-		cog3.rotate(-angle);
-    }
+	  	//and rotate it
+	  	if (snappedToCorrectPeg) {
+			if (index % 2 == 1) /* then its odd */ {
+		  		cog.rotate(angle);
+		  	} else /* then its even */ {
+		  		cog.rotate(-angle);
+		  	}
+	    } else {
+	    	return false;
+	    }
+	});
+
+	
 };
 
 //Make the handle cog turn when you hold 
