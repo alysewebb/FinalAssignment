@@ -15,6 +15,7 @@ var rotate = function(){
 	// Adapted from:
 	//  http://stackoverflow.com/questions/5177867/how-to-find-out-about-the-snapped-to-element-for-jquery-ui-draggable-elements
 	var cogs = [$(".cog3"), $(".cog6"), $(".cog2"), $(".cog1"), $(".cog4"), $(".cog5")];
+	var numCogsTurning = 0;
 
 	$.each(cogs, function (index, cog) {
 		/* Get all possible elements we can snap to */
@@ -31,6 +32,7 @@ var rotate = function(){
 
 	  	//and rotate it
 	  	if (snappedToCorrectPeg) {
+	  		numCogsTurning = numCogsTurning + 1;
 			if (index % 2 == 1) /* then its odd */ {
 		  		cog.rotate(angle);
 		  	} else /* then its even */ {
@@ -40,6 +42,11 @@ var rotate = function(){
 	    	return false;
 	    }
 	});
+
+	//Rotate the pulley cog if all other cogs rotating
+	if (numCogsTurning == cogs.length) {
+		$(".pulley1").rotate(-angle);
+	} 
 
 	
 };
