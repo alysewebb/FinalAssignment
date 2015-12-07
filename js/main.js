@@ -18,17 +18,20 @@ var rotate = function(){
 	var numCogsTurning = 0;
 
 	$.each(cogs, function (index, cog) {
+
 		/* Get all possible elements we can snap to */
 		var snappables = cog.data('ui-draggable').snapElements;
 	    var correctPeg = cog.data('correctPeg')[0];
 
 	    // Look through snap targets for one which is 'snapping' and is also the correctPeg
 	  	var snappedToCorrectPeg = false;
-	  	$.each(snappables, function (i, element) {
-	  		if (element.snapping && correctPeg == element.item) {
-	  			snappedToCorrectPeg = true;
-	  		}
-	  	});
+	  	if (typeof snappables !== "undefined") {
+		  	$.each(snappables, function (i, element) {
+		  		if (element.snapping && correctPeg == element.item) {
+		  			snappedToCorrectPeg = true;
+		  		}
+		  	});
+	  	}
 
 	  	//and rotate it
 	  	if (snappedToCorrectPeg) {
@@ -46,7 +49,9 @@ var rotate = function(){
 	//Rotate the pulley cog if all other cogs rotating
 	if (numCogsTurning == cogs.length) {
 		$(".pulley1").rotate(-angle);
-	} 
+		$(".cornchip").animate({top: "+=3"}, 1);
+		$(".rope2").animate({height: "+=3"}, 1);
+	}
 
 	
 };

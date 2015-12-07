@@ -138,7 +138,7 @@ textarea {
 .rope2 {
     position: absolute;
     width:1px;
-    border-right: 3px solid black;
+    border-right: 4px solid black;
     height: 40px;
     top: 63px;
     right: 140px;
@@ -151,7 +151,7 @@ textarea {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    right: 97px;
+    right: 98px;
     top: 100px;
 }
 
