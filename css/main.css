@@ -59,7 +59,6 @@ textarea {
 .game {
     height: 1010px;
     width: 1298px;
-    background-image: url("../img/PegsBG.png");
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid;
@@ -120,8 +119,8 @@ textarea {
 
 .handle {
     position: absolute;
-    top: 450px;
-    left: 50px;
+    top: 400px;
+    left: 92px;
 }
 
 .pulley1 {
@@ -175,11 +174,6 @@ textarea {
     height: 25px;
     border-radius: 50%;
     position: absolute;
-}
-
-.peg1 {
-    top: 412px;
-    left: 187px;
 }
 
 .peg2 {
