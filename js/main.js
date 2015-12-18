@@ -51,7 +51,7 @@ var rotate = function(){
 	});
 
 	//Rotate the pulley cog if all other cogs rotating
-	if (numCogsTurning == cogs.length || true) { // TODO: remove the true
+	if (numCogsTurning == cogs.length) { 
 		var chipMove = 3*chipDir;
 		$(".pulley1").rotate(-angle);
 		$(".cornchip").animate({top: "+="+chipMove}, 1);
@@ -137,7 +137,7 @@ function isSnapped(cog) {
 	return returnValue;
 }
 
-function debugSetup() {
+/*function debugSetup() {
 	$(".cog").each(function(index) {
 		var cog = $(this);
 		var peg = cog.data("correctPeg");
@@ -145,4 +145,4 @@ function debugSetup() {
  		cog.css({top:peg.position().top, left:peg.position().left});
 	});
 }
-
+*/
