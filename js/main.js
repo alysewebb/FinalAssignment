@@ -83,16 +83,28 @@ $(".peg").droppable(
 
 $(".cog").draggable({ snap: ".peg", snapMode: "inner", 
 	containment: "parent", revert: false,
-	// start: function(event, ui) {
-	// 	ui.helper.data('dropped', false);
-	// },
-	// stop: function(event, ui) {
-
-	// 	ui.draggable.css({bottom:'originalBottom', left:'originalLeft'})
-	// }
+	stop: function(event, ui) {
+		var cog = $(this);
+		if (isSnapped(cog) == false) {
+			cog.css({top:cog.parent().height() - (cog.find("img").height() + cog.height()) / 2});
+		}
+	}
 
 });
 
 
+function isSnapped(cog) {
+	var snappables = cog.data('ui-draggable').snapElements;
+	var returnValue = false;
 
+	if (typeof snappables !== "undefined") {
+		$.each(snappables, function (i, element) {
+			if (element.snapping) {
+				returnValue = true;
+		  		return false; // stop looping, we found one
+		 	}
+		});
+	}
+	return returnValue;
+}
 
