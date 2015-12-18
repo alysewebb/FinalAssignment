@@ -1,4 +1,5 @@
 var angle = 0;
+var chipDir = 1;
 var animation;
 
 $(".cog3").data('correctPeg', $(".peg3"));
@@ -7,6 +8,8 @@ $(".cog2").data('correctPeg', $(".peg7"));
 $(".cog1").data('correctPeg', $(".peg8"));
 $(".cog4").data('correctPeg', $(".peg10"));
 $(".cog5").data('correctPeg', $(".peg11"));
+
+//debugSetup();
 
 var rotate = function(){
     angle+=3;
@@ -47,10 +50,19 @@ var rotate = function(){
 	});
 
 	//Rotate the pulley cog if all other cogs rotating
-	if (numCogsTurning == cogs.length) {
+	if (numCogsTurning == cogs.length || true) { // TODO: remove the true
+		var chipMove = 3*chipDir;
 		$(".pulley1").rotate(-angle);
-		$(".cornchip").animate({top: "+=3"}, 1);
-		$(".rope2").animate({height: "+=3"}, 1);
+		$(".cornchip").animate({top: "+="+chipMove}, 1);
+		console.log($(".cornchip").position().top);
+		$(".rope2").animate({height: "+="+chipMove}, 1);
+	}
+
+	if ($(".cornchip").position().top >= 890 ) {
+		chipDir = -1;
+		$(".cornchip").css('background-image', 'url("img/CornChipSalsa.png")');
+	} else if ($(".cornchip").position().top <= 100 ) {
+		chipDir = 1;
 	}
 
 	
@@ -106,5 +118,14 @@ function isSnapped(cog) {
 		});
 	}
 	return returnValue;
+}
+
+function debugSetup() {
+	$(".cog").each(function(index) {
+		var cog = $(this);
+		var peg = cog.data("correctPeg");
+		console.log('a');
+ 		cog.css({top:peg.position().top, left:peg.position().left});
+	});
 }
 
