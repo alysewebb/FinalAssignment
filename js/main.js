@@ -1,5 +1,6 @@
 var angle = 0;
 var chipDir = 1;
+var didJump = false;
 var animation;
 
 $(".cog3").data('correctPeg', $(".peg3"));
@@ -60,9 +61,25 @@ var rotate = function(){
 
 	if ($(".cornchip").position().top >= 890 ) {
 		chipDir = -1;
-		$(".cornchip").css('background-image', 'url("img/CornChipSalsa.png")');
+		if (!didJump) {
+			$(".cornchip").css('background-image', 'url("img/CornChipSalsa.png")');
+		}
 	} else if ($(".cornchip").position().top <= 100 ) {
 		chipDir = 1;
+		// didJump = false;
+	}
+
+	if ($(".cornchip").position().top <= 700 && chipDir==-1) {
+		if (didJump == false) {
+			 $(".puppy").animate({ 
+		        right: "+=2000px",
+		    }, 1200 );
+			didJump = true;
+			setTimeout(function(){ 
+				$(".cornchip").css('background-image', 'url("img/CornChipGone.png")'); 
+			}, 300);
+	    }
+
 	}
 
 	
